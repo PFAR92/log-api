@@ -1,10 +1,9 @@
 package com.api.log.controller;
 
-import ch.qos.logback.core.joran.conditional.IfAction;
 import com.api.log.controller.domain.model.Cliente;
 import com.api.log.repository.CLienteRepository;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,12 +30,12 @@ public class CLienteController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Cliente adicionar(@RequestBody Cliente cliente){
+    public Cliente adicionar(@Valid @RequestBody Cliente cliente){
         return cLienteRepository.save(cliente);
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<Cliente> atualizar(@PathVariable Long id,@RequestBody Cliente cliente){
+    public ResponseEntity<Cliente> atualizar(@Valid @PathVariable Long id,@RequestBody Cliente cliente){
         if (!cLienteRepository.existsById(id)) return ResponseEntity.notFound().build();
         else cliente.setId(id);
 
