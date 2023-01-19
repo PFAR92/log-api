@@ -1,4 +1,4 @@
-package com.api.log.domain.exception;
+package com.log.api.domain.exception;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;

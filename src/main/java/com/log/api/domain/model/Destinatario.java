@@ -1,4 +1,4 @@
-package com.api.log.domain.model;
+package com.log.api.domain.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;

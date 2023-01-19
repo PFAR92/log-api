@@ -1,4 +1,4 @@
-package com.api.log;
+package com.log.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

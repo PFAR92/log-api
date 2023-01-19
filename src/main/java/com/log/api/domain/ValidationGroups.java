@@ -1,4 +1,4 @@
-package com.api.log.domain;
+package com.log.api.domain;
 
 public interface ValidationGroups {
 

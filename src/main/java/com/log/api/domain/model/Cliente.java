@@ -1,12 +1,14 @@
-package com.api.log.domain.model;
+package com.log.api.domain.model;
 
-import com.api.log.domain.ValidationGroups;
-import jakarta.persistence.*;
+import com.log.api.domain.ValidationGroups;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import jakarta.validation.groups.Default;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
