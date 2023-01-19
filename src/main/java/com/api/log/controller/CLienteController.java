@@ -1,6 +1,7 @@
 package com.api.log.controller;
 
 import com.api.log.controller.domain.model.Cliente;
+import com.api.log.controller.domain.service.CatalogoClienteService;
 import com.api.log.repository.CLienteRepository;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -16,6 +17,7 @@ import java.util.Optional;
 @RequestMapping("/clientes")
 public class CLienteController {
     private CLienteRepository cLienteRepository;
+    private CatalogoClienteService catalogoClienteService;
 
     @GetMapping
     public List<Cliente> listar(){
@@ -31,7 +33,7 @@ public class CLienteController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Cliente adicionar(@Valid @RequestBody Cliente cliente){
-        return cLienteRepository.save(cliente);
+        return catalogoClienteService.salvar(cliente);
     }
 
     @PutMapping(value = "/{id}")
@@ -39,14 +41,14 @@ public class CLienteController {
         if (!cLienteRepository.existsById(id)) return ResponseEntity.notFound().build();
         else cliente.setId(id);
 
-        cLienteRepository.save(cliente);
+        catalogoClienteService.salvar(cliente);
         return ResponseEntity.ok(cliente);
     }
 
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Void> remover(@PathVariable Long id) {
         if (!cLienteRepository.existsById(id)) return ResponseEntity.notFound().build();
-        else cLienteRepository.deleteById(id);
+        else catalogoClienteService.excluir(id);
 
         return ResponseEntity.noContent().build();
     }
