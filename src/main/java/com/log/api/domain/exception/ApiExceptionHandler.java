@@ -1,4 +1,4 @@
-package com.api.log.domain.exception;
+package com.log.api.domain.exception;
 
 import lombok.AllArgsConstructor;
 import org.springframework.context.MessageSource;

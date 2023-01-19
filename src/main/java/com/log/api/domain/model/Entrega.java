@@ -1,7 +1,7 @@
-package com.api.log.domain.model;
+package com.log.api.domain.model;
 
-import com.api.log.domain.ValidationGroups;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.log.api.domain.ValidationGroups;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;

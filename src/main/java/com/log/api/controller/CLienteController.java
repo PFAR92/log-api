@@ -1,8 +1,8 @@
-package com.api.log.controller;
+package com.log.api.controller;
 
-import com.api.log.domain.model.Cliente;
-import com.api.log.domain.service.CatalogoClienteService;
-import com.api.log.domain.repository.CLienteRepository;
+import com.log.api.domain.model.Cliente;
+import com.log.api.domain.repository.CLienteRepository;
+import com.log.api.domain.service.CatalogoClienteService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;

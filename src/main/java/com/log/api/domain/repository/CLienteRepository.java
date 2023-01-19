@@ -1,6 +1,6 @@
-package com.api.log.domain.repository;
+package com.log.api.domain.repository;
 
-import com.api.log.domain.model.Cliente;
+import com.log.api.domain.model.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

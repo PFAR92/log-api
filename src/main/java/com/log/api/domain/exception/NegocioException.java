@@ -1,6 +1,4 @@
-package com.api.log.domain.exception;
-
-import lombok.NoArgsConstructor;
+package com.log.api.domain.exception;
 
 import java.io.Serial;
 

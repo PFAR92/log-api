@@ -1,8 +1,8 @@
-package com.api.log.domain.service;
+package com.log.api.domain.service;
 
-import com.api.log.domain.model.Cliente;
-import com.api.log.domain.exception.NegocioException;
-import com.api.log.domain.repository.CLienteRepository;
+import com.log.api.domain.exception.NegocioException;
+import com.log.api.domain.model.Cliente;
+import com.log.api.domain.repository.CLienteRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

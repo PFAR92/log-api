@@ -1,9 +1,9 @@
-package com.api.log.domain.service;
+package com.log.api.domain.service;
 
-import com.api.log.domain.model.Cliente;
-import com.api.log.domain.model.Entrega;
-import com.api.log.domain.model.StatusEntrega;
-import com.api.log.domain.repository.EntregaRepository;
+import com.log.api.domain.model.Cliente;
+import com.log.api.domain.model.Entrega;
+import com.log.api.domain.model.StatusEntrega;
+import com.log.api.domain.repository.EntregaRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
