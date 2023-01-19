@@ -1,4 +1,4 @@
-package com.api.log.controller.domain.model;
+package com.api.log.domain.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
