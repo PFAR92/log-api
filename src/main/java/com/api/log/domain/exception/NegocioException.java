@@ -1,4 +1,4 @@
-package com.api.log.exception;
+package com.api.log.domain.exception;
 
 import lombok.NoArgsConstructor;
 

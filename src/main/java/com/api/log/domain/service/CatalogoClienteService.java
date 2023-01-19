@@ -1,8 +1,8 @@
-package com.api.log.controller.domain.service;
+package com.api.log.domain.service;
 
-import com.api.log.controller.domain.model.Cliente;
-import com.api.log.exception.NegocioException;
-import com.api.log.repository.CLienteRepository;
+import com.api.log.domain.model.Cliente;
+import com.api.log.domain.exception.NegocioException;
+import com.api.log.domain.repository.CLienteRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,6 +12,9 @@ import org.springframework.transaction.annotation.Transactional;
 public class CatalogoClienteService {
 
     private CLienteRepository cLienteRepository;
+    public Cliente buscar(Long id){
+        return  cLienteRepository.findById(id).orElseThrow(()-> new NegocioException("Cliente não encontrado"));
+    }
 
     @Transactional
     public Cliente salvar(Cliente cliente){
