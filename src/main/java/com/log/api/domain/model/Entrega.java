@@ -2,6 +2,7 @@ package com.log.api.domain.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.log.api.domain.ValidationGroups;
+import com.log.api.exception.NegocioException;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
@@ -64,4 +65,17 @@ public class Entrega {
         this.getOcorrencias().add(ocorrencia);
         return ocorrencia;
     }
+
+    public void finalizar() {
+        if (!podeSerFinalizada()){
+            throw new NegocioException("Entrega não pode ser finalizada");
+        }
+        setStatus(StatusEntrega.FINALIZADA);
+        setDataFinalizacao(OffsetDateTime.now());
+    }
+
+    public boolean podeSerFinalizada(){
+        return StatusEntrega.PENDENTE.equals(getStatus());
+    }
+    
 }
