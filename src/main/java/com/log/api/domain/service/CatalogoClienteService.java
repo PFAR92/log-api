@@ -1,6 +1,6 @@
 package com.log.api.domain.service;
 
-import com.log.api.domain.exception.NegocioException;
+import com.log.api.exception.NegocioException;
 import com.log.api.domain.model.Cliente;
 import com.log.api.domain.repository.CLienteRepository;
 import lombok.AllArgsConstructor;
