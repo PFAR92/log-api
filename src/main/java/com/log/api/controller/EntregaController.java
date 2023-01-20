@@ -3,18 +3,17 @@ package com.log.api.controller;
 import com.log.api.assembler.EntregaAssembler;
 import com.log.api.domain.model.Entrega;
 import com.log.api.domain.repository.EntregaRepository;
+import com.log.api.domain.service.FInalizacaoEntregaService;
 import com.log.api.domain.service.SolicitacaoEntregaService;
 import com.log.api.model.EntregaModel;
 import com.log.api.model.input.EntregaInput;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
-import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @AllArgsConstructor
 @RestController
@@ -24,6 +23,7 @@ public class EntregaController {
     private SolicitacaoEntregaService solicitacaoEntregaService;
     private EntregaRepository entregaRepository;
     private EntregaAssembler entregaAssembler;
+    private FInalizacaoEntregaService fInalizacaoEntregaService;
 
 
     @GetMapping
@@ -44,5 +44,10 @@ public class EntregaController {
         Entrega novaEntrega = entregaAssembler.toEntity(entregaInput);
         Entrega entregaSolicitada = solicitacaoEntregaService.solicitar(novaEntrega);
         return entregaAssembler.toModel(entregaSolicitada);
+    }
+    @PutMapping(value = "/{id}/finalizacao")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void finalizar(@PathVariable Long id){
+        fInalizacaoEntregaService.finalizar(id);
     }
 }
